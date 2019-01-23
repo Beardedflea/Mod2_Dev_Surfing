@@ -1,0 +1,9 @@
+<h1><%= @course.name %></h1>
+<img src= <%= @course.img_url %>>
+<h1><%= @course.teacher.first_name %> <%= @course.teacher.last_name %></h1>
+<p><%= @course.description %></p>
+
+
+<%= link_to "Edit course", edit_course_path %><br>
+
+<%= link_to "Return to all courses", courses_path %>

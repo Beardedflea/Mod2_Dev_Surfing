@@ -6,6 +6,9 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.date :start_date
       t.date :end_date
       t.integer :teacher_id
+      t.integer :skill_id
+      t.integer :location_id
+      t.string :img_url
     end
   end
 end

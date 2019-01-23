@@ -1,0 +1,15 @@
+
+<h1>All courses<h1>
+
+
+<ul>
+    <% @courses.all.each do |course| %>
+        <li>
+        <%= link_to course.name, course_path(course) %></br>
+        <img src= <%= course.img_url %> ></li>
+        <li style="font-size:70%;"><%= course.date_list %>
+        </li>
+    <%end%>
+</ul>
+
+</body>
