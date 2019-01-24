@@ -16,8 +16,8 @@
     <label>Day of the week:</label><br>
     <%= f.collection_select :day_of_week, Day.week, :to_s, :to_s, include_blank: false%><br>
 
-    <label>Course lesson duration:</label><br>
-    <%= f.time_field :lesson_duration%><br>
+    <label>Time of the day:</label><br>
+    <%= f.time_field :lesson_duration,value: "%H:%M", min: 'hh:mm:ss', max: 'hh:mm:ss'%><br>
 
     <label>Course skill:</label><br>
     <%= f.collection_select :skill_id, Skill.all, :id, :name %><br>

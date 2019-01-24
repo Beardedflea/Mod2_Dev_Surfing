@@ -1,5 +1,6 @@
 
-<h1>Skills that we teach<h1>
+
+<h1><h1 style="text-align:center;"> Skills that we teach<h1>
 
 
 <ul>
@@ -7,7 +8,7 @@
         <li>
         <%= link_to skill.name, skill_path(skill) %></br>
         <img src= <%= skill.img_url %> ></li>
-        <li style="font-size:70%;"> Invented by:<%= skill.creator %>
+        <li style="font-size:70%;"> Invented by: <%= skill.creator %>
         </li>
     <%end%>
 </ul>

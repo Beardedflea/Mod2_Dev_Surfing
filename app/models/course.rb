@@ -19,7 +19,7 @@ class Course < ApplicationRecord
     end
 
     def lesson_time
-        self.lesson_duration.strftime("%l:%M")
+        self.lesson_duration.strftime("%H:%M")
     end
 
 end 
