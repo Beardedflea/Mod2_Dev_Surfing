@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_01_21_174648) do
     t.string "description"
     t.date "start_date"
     t.date "end_date"
+    t.time "lesson_duration"
+    t.string "day_of_week"
     t.integer "teacher_id"
     t.integer "skill_id"
     t.integer "location_id"

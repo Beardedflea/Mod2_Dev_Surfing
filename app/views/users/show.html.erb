@@ -1,0 +1,21 @@
+
+
+<h2><h2 style="text-align:center;"><%= @user.full_name%><h2>
+
+<h3><h3 style="text-align:center;"><img src= <%= @user.profile_pic%> ></h3>
+<li><%= @user.age %></li>
+<li><%= @user.credentials %></li>
+<p><%= @user.bio %></p>
+
+<p> Courses that are being taught by you:<p>
+<ul>
+    <% @courses.all.each do |course| %>
+        <%if course.teacher_id == @user.id %>
+        <li>
+            <%= link_to course.name, course_path(course) %></li>
+            <li><img src= <%= course.img_url %>></li>
+        <%end%>
+    <%end%>
+</ul>
+
+<%= link_to "Edit your profile", edit_user_path %><br>

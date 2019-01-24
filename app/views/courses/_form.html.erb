@@ -1,0 +1,38 @@
+
+<ul>
+<%= form_for(@course) do |f| %>
+    <label>Course name:</label><br>
+    <%= f.text_field :name%><br>
+   
+    <label>Course description:</label><br>
+    <%= f.text_area :description %><br>
+    
+    <label>Course start date:</label><br>
+    <%= f.date_field :start_date, min: Date.today%><br>
+
+    <label>Course end date:</label><br>
+    <%= f.date_field :end_date, max: Date.today+365%><br>
+
+    <label>Day of the week:</label><br>
+    <%= f.collection_select :day_of_week, Day.week, :to_s, :to_s, include_blank: false%><br>
+
+    <label>Time of the day:</label><br>
+    <%= f.time_field :lesson_duration,value: "%H:%M", min: 'hh:mm:ss', max: 'hh:mm:ss'%><br>
+
+    <label>Course skill:</label><br>
+    <%= f.collection_select :skill_id, Skill.all, :id, :name %><br>
+
+    <label>Course location:</label><br>
+    <%= f.collection_select :location_id, Location.all, :id, :name %><br><br>
+
+    <label>Course teacher:</label><br>
+    <%= f.collection_select :teacher_id, User.all, :id, :first_name %><br><br>
+
+    <label>Course image:</label><br>
+    <%= f.text_field :img_url%><br>
+
+    Add teacher aswell __
+    <%= f.submit %>
+
+<% end %>
+</ul>
