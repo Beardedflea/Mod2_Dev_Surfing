@@ -1,4 +1,8 @@
 
+
+<% flash.each do |message_type, message| %>
+     <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 <ul>
 <%= form_for(@course) do |f| %>
     <label>Course name:</label><br>

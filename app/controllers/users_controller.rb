@@ -6,11 +6,18 @@ class UsersController < ApplicationController
     end
 
     def new 
-        @user = User.new 
     end
 
     def create 
-
+        @user =User.new(user_params(:first_name, :last_name, :email, :password, :password_confirmation))
+        if @user.valid?
+            @user.save
+            session[:user_id] = @user.id
+            flash[:success] = "Successfully created account!"
+            redirect_to '/welcome'
+        else
+            render 'signup'
+        end
     end
 
     def edit 
@@ -23,5 +30,11 @@ class UsersController < ApplicationController
     def destroy
         @user.destroy
         redirect_to courses_path
+    end
+
+    private
+    
+    def user_params(*args)
+        params.require(:user).permit(args)
     end
 end
