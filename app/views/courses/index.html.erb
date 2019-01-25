@@ -1,13 +1,19 @@
 
-<h1>All courses<h1>
+
+<div class="container spacer">
 
 
-<ul>
+  <div class = "row">
+
+
     <% @courses.all.each do |course| %>
-        <li>
+         <div class="col-lg-4 col-6 "><img class="img-fluid img-thumbnail">
         <%= link_to course.name, course_path(course) %></br>
-        <img src= <%= course.img_url %> ></li>
-        <li style="font-size:70%;"><%= course.date_list %>
-        </li>
+        <img src= <%= course.img_url %> ></br>
+        <%= course.date_list %>
+        </div>
     <%end%>
-</ul>
+
+  </div>
+
+</div>
