@@ -17,9 +17,9 @@ class CoursesController < ApplicationController
 
         if @course.valid?
             @course = Course.create(course_params)
-
             redirect_to @course
         else
+            flash[:errors] = @course.errors.full_messages
             render 'new'
         end   
     end
@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
     def update 
         @course = Course.find(params[:id])
         @course.update(course_params)
-
+        flash[:updated] = "Course updated!"
         redirect_to @course
     end
 
