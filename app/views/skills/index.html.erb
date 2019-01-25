@@ -2,13 +2,20 @@
 
 <h1><h1 style="text-align:center;"> Skills that we teach<h1>
 
+  <div class="container spacer">
 
-<ul>
+
+    <div class = "row">
+
+
     <% @skills.all.each do |skill| %>
-        <li>
+    <div class="col-lg-4 col-6 "><img class="img-fluid img-thumbnail">
         <%= link_to skill.name, skill_path(skill) %></br>
         <img src= <%= skill.img_url %> ></li>
-        <li style="font-size:70%;"> Invented by: <%= skill.creator %>
-        </li>
+      <p text-white-50 mx-auto mt-2 mb-5>Invented by: <%= skill.creator %></p>
+        </div>
     <%end%>
-</ul>
+
+</div>
+
+</div>
