@@ -13,6 +13,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
             session[:user_id] = @user.id
+            flash[:success] = "Successfully created account!"
             redirect_to '/welcome'
         else
             render 'signup'
